@@ -1,0 +1,28 @@
+.listbox {
+    margin:auto;
+    height: 60px;
+    width: 400px;
+}
+.entry {
+    border:solid 1px black;
+}
+
+.listbox input {
+    height: 54px;
+    width: 385px;
+    font-size: 30px;
+    outline: none;
+    padding-left: 10px;
+}
+
+.filters {
+    height: 20px;
+    width: 386px;
+    padding: 5px;
+    border:solid 1px black;
+    border-top: none;
+}
+
+.filters button {
+    margin-left: 10px;
+}
