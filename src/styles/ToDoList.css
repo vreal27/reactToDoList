@@ -25,7 +25,12 @@
     cursor: pointer;
 }
 
-.delete {
+.complete:hover, .listitems li{
+    cursor: pointer;
+}
+
+ .delete  {
+    text-decoration: none;
     height: 25px;
     margin-left:5px;
     border-radius: 5px;

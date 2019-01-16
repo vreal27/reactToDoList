@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { postList, changeFilter } from '../actions/todoactions';
 import '../styles/All.css'
 
-import ToDoList from './ToDoList'
+import ToDoItem from './ToDoItem'
 
 class All extends Component {
    state = {
@@ -46,17 +46,21 @@ class All extends Component {
             <div className ="listbox">
                 <form autoComplete="off"onSubmit={this.handleSubmit}>
 
-                    <input className= "entry" type="text" name="text" value ={this.state.text} onChange= {this.changeText}/>
+                    <input className= "entry" type="text" name="text" placeholder="Enter tasks..." value ={this.state.text} onChange= {this.changeText}/>
 
 
             
                 </form>
-            <ToDoList/>
-            <div className="filters">test
-                <button onClick ={this.changeAll}>All</button>
-                <button onClick={this.changeComplete}>C</button>
-                <button onClick={this.changeIncomplete}>I</button>
-            </div>
+                <ul className="listitems">
+                {this.props.all.map(s => (
+                    <ToDoItem key={s.id}  {...s}/>
+                ))}
+                </ul>
+                <div className="filters">Items left: {this.props.all.length} 
+                    <button onClick ={this.changeAll}>All</button>
+                    <button onClick={this.changeComplete}>Complete</button>
+                    <button onClick={this.changeIncomplete}>Incomplete</button>
+                </div>
             </div>
         )
     }

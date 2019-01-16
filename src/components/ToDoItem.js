@@ -13,12 +13,14 @@ class ToDoItem extends Component {
     }
     render() {
         return (
-            <li  onClick={this.changeStatus}>
+            <li className= {this.props.status ? '' : 'complete'} onClick={this.changeStatus}>
                 {this.props.text}
                 <button className="delete" onClick ={this.deleteItem}>X</button>
             </li>
         )
     }
 }
+
+
 
 export default ToDoItem
